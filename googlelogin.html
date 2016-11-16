@@ -16,7 +16,7 @@
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
     <script>
-    name = userName;
+
 
     function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
@@ -26,10 +26,10 @@
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail());
         
-        userName = profile.getName();
+            $("wat").html('Name: ' + profile.getName());
     }
 
-    $("wat").html('Name: ' + name);
+
 
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
