@@ -9,12 +9,15 @@
 </head>
 
 <body>
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <h1>Blah!</h1>
     <h2 id="wat"></h2>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
     <script>
+    name = userName;
+
     function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
         console.log(profile);
@@ -23,10 +26,10 @@
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail());
         
-        
+        userName = profile.getName();
     }
 
-    $("wat").html('Name: ' + PG.ig);
+    $("wat").html('Name: ' + name);
 
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
