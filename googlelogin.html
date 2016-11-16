@@ -21,9 +21,10 @@
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail());
+        var id = ('Name: ' + profile.getName());
     }
 
-    $("wat").html('ID: ' + profile.getId());
+    $("wat").html('ID: ' + id);
 
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
